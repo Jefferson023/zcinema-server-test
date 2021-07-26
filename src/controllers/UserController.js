@@ -3,7 +3,7 @@ const User = require("../models/User")
 module.exports = {
   async createUser(req, res) {
     const { first_name, last_name, password, email } = req.body
-    const avatar = 'http://localhost:8000/uploads/user_avatars/' + req.file.filename
+    const avatar = 'https://teste1231231.herokuapp.com/uploads/user_avatars/' + req.file.filename
     try {
       const isSameUser = await User.findOne({ where: { email : email } })
       if(isSameUser){
